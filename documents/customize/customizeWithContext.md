@@ -12,3 +12,35 @@
 - Providers와 별개로 `Themes`라는 폴더를 만들어 테마를 정의하고 컨텍스트를 만드는 부분에서 테마를 불러와서 사용할 수도 있다.
 - 글로벌 테마를 정의하며 테마 컨텍스트 여럿을 정의하지 않는 경우는 별도의 폴더를 만들지 않고 `Providers`에 정의 해도 충분할 수 있다.
 - 하지만 테마에 정의할 대상이 늘어나게 되면, Mui 컴포넌트 별로 테마를 정의한 부분을 불러와서 사용할 수도 있으며 이 경우에는 별도의 `Themes` 폴더를 이용하는 편이 좋을 수 있다.
+
+## 코드 해설
+
+```tsx
+const theme = createTheme({
+  components: {
+    // Name of the component
+    MuiButton: {
+      styleOverrides: {
+        // Name of the slot
+        root: {
+          // Some CSS
+          fontSize: "1rem",
+        },
+      },
+    },
+  },
+});
+```
+
+- `createTheme` 함수의 결과인 `theme` 변수는 테마 컨텍스트의 `theme` 속성에 추가되어 컨텍스트 하위 컴포넌트에 적용된다.
+
+```tsx
+<ThemeProvider theme={theme}>
+  <Button>This button has disabled ripples.</Button>
+</ThemeProvider>
+```
+
+- `createTheme` 함수의 인자로 기존의 Mui에 적용할 커스텀 설정을 추가할 수 있다.
+- `components` 기존의 Mui 컴포넌트를 수정할 때 사용한다.
+- `MuiButton` 기존의 Mui 컴포넌트에서 커스터마이징할 대상을 선택하는 부분이다. [라이브러리 소스코드](https://github.com/mui/material-ui/blob/master/packages/mui-material/src/styles/overrides.d.ts)를 보고 커스터마이징 할 수 있는 대상을 선택할 수 있다.
+- `styleOverrides` Mui 컴포넌트에 부여된 CSS를 덮어쓰기 위한 옵션이다. 스타일을 추가하여 기존 Mui 컴포넌트의 스타일을 변경할 수 있다.
