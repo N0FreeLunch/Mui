@@ -52,3 +52,8 @@ export default defineConfig({
   plugins: [react(), tsconfigPaths()],
 })
 ```
+
+### react router 설치
+```
+pnpm install react-router-dom
+```
