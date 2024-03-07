@@ -1,7 +1,7 @@
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 
-export default function Month({year = 0, month = 0}: {year: number, month: number}) {
+export default function Month({year = 0, month = 0}: {year?: number, month?: number}) {
   const lastDayOfMonth = (() => {
     if(year === 0 || month === 0) {
       return 31;
