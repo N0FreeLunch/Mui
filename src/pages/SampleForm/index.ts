@@ -1,4 +1,4 @@
-import Sample1 from './ui/Sample1';
-import Sample2 from './ui/Sample2';
+import YearPage from './ui/YearPage';
+import BirthDayPage from './ui/BirthDayPage';
 
-export { Sample1, Sample2 }
+export { YearPage, BirthDayPage }
