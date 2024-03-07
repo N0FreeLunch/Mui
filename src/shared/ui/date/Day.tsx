@@ -15,7 +15,6 @@ export default function Month({year = 0, month = 0}: {year?: number, month?: num
       disablePortal
       id="Month-selector"
       options={dayList}
-      sx={{ width: 300 }}
       renderInput={(params) => <TextField {...params} label="Day" />}
     />
   );

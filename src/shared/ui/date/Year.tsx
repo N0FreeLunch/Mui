@@ -13,7 +13,6 @@ export default function Year({count = 100}) {
       disablePortal
       id="year-selector"
       options={displayYearList}
-      sx={{ width: 300 }}
       renderInput={(params) => <TextField {...params} label="Year" />}
     />
   );
