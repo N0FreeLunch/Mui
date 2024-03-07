@@ -6,12 +6,13 @@ const yearList = [...Array(100).keys()].map(e => {
 	return String(currentYear-e);
 });
 
-export default function Year() {
+export default function Year({count = 100}) {
+  const displayYearList = yearList.slice(0, count-1);
   return (
     <Autocomplete
       disablePortal
       id="year-selector"
-      options={yearList}
+      options={displayYearList}
       sx={{ width: 300 }}
       renderInput={(params) => <TextField {...params} label="Year" />}
     />
