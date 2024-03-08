@@ -1,5 +1,4 @@
-import { Year, Month, Day } from '@src/shared/ui/date/index'
-import { BirthDay } from '@src/widgets/ui/date';
+import { Year, Month, Day, BirthDay } from '@src/shared/ui/date/index'
 
 const BirthDayPage = () => {
   return (
