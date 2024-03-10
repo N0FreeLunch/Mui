@@ -2,9 +2,10 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import { YearPage, BirthDayPage} from '@src/pages/SampleForm/index';
+import { BirthDayPage} from '@src/pages/SampleForm/index';
 import { AddressFormPage, PaymentFormPage, ReviewPage} from '@src/pages/Checkout/index';
 import Checkout from "@src/widgets/ui/layout/Checkout";
+import { DatePickerPage } from "./Date/index";
 
 const router = createBrowserRouter([
   {
@@ -12,8 +13,8 @@ const router = createBrowserRouter([
     element: <div>Hello world!</div>,
   },
   {
-    path: "/year",
-    element: <YearPage/>
+    path: "/datepicker",
+    element: <DatePickerPage/>
   },
   {
     path: "/birthday",
